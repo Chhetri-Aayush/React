@@ -1,4 +1,4 @@
-function Value({ data }) {
+function Value({ data, handleOnClickDelete }) {
   return (
     <>
       <div>
@@ -13,7 +13,11 @@ function Value({ data }) {
                   <p>{item.date}</p>
                 </div>
                 <div className="col-3">
-                  <button type="button" className="btn btn-danger">
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={() => handleOnClickDelete(index)}
+                  >
                     Delete
                   </button>
                 </div>
