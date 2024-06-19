@@ -1,0 +1,9 @@
+.mainDiv{
+    border: 2px solid black;
+    margin: auto ;
+    margin-top: 20px;
+    width:600px;
+    border-radius: 5px;
+    padding: 15px;
+    
+}

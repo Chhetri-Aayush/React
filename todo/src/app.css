@@ -1,0 +1,18 @@
+h1{
+    margin: 20px;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+input{
+    width: 100%;
+}
+
+.text-center{
+    margin: 13px;
+    font-size: 25px;
+}
+
+button{
+    min-width: 80px;
+}
