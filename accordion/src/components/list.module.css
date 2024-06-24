@@ -1,0 +1,31 @@
+
+.customDiv {
+    width: 60%; 
+    font-size: 20px; 
+    border: 2px solid black; 
+    margin: 10px 0; 
+    padding: 15px; 
+    cursor: pointer; 
+    background-color: #f9f9f9; 
+    position: relative;
+  }
+
+  /* .question {
+    display: flex; 
+   
+    align-items: center;
+  } */
+  
+  .add {
+    float: right;
+    font-weight: bold; 
+    margin-left: 10px; 
+  }
+  
+  .answer {
+    margin-top: 10px;
+    padding-top: 10px; 
+    font-size: 18px; 
+    color: #333; 
+  }
+   
