@@ -13,7 +13,8 @@ function Input({ handleOnClickAdd }) {
     setDate(newDate);
   }
 
-  function addDataToList() {
+  function addDataToList(event) {
+    event.preventDefault();
     handleOnClickAdd(name, date);
     setName("");
     setDate("");
@@ -22,23 +23,22 @@ function Input({ handleOnClickAdd }) {
   return (
     <>
       <div className="container text-center">
-        <div className="row">
+        <form className="row" onSubmit={addDataToList}>
           <div className="col-4">
-            <input type="text" value={name} onChange={handleNameChange} />
+            <input
+              type="text"
+              value={name}
+              onChange={handleNameChange}
+              placeholder="Enter your ToDo...."
+            />
           </div>
           <div className="col-4">
             <input type="date" value={date} onChange={handleDateChange} />
           </div>
           <div className="col-3">
-            <button
-              type="button"
-              className="btn btn-success"
-              onClick={addDataToList}
-            >
-              Add
-            </button>
+            <button className="btn btn-success">Add</button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );

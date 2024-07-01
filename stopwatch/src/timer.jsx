@@ -9,12 +9,8 @@ export default function Stopwatch() {
     setStartingTime(Date.now());
     setNow(Date.now());
 
-    timeRef.current = setInterval(() => setNow(Date.now()), 10);
+    timeRef.current = setInterval(() => setNow(Date.now()), 5000);
   }
-
-  let secondsPassed = 0;
-  if (now != null && secondsPassed != null)
-    secondsPassed = (now - startingTime) / 1000;
 
   function handleOnClickStop() {
     clearInterval(timeRef.current);
@@ -25,12 +21,21 @@ export default function Stopwatch() {
     clearInterval(timeRef.current);
   }
 
+  function handleOnClickResume() {
+    timeRef.current = setInterval(() => setNow(Date.now()), 5000);
+  }
+
+  let secondsPassed = 0;
+  if (now != null && secondsPassed != null)
+    secondsPassed = (now - startingTime) / 1000;
+
   return (
     <>
       <p> Time in seconds:{secondsPassed.toFixed(3)}</p>
       <button onClick={handleOnClickStart}> Start</button>
       <button onClick={handleOnClickStop}> Stop</button>
       <button onClick={handleOnClickReset}> Reset</button>
+      <button onClick={handleOnClickResume}> Resume</button>
     </>
   );
 }
