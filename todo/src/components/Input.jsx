@@ -1,23 +1,69 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+//      INPUT USING USESTATE
+// function Input({ handleOnClickAdd }) {
+//   const [name, setName] = useState("");
+//   const [date, setDate] = useState("");
+
+//   function handleNameChange(event) {
+//     let newName = event.target.value;
+//     setName(newName);
+//   }
+//   function handleDateChange(event) {
+//     let newDate = event.target.value;
+//     setDate(newDate);
+//   }
+
+//   function addDataToList(event) {
+//     event.preventDefault();
+//     handleOnClickAdd(name, date);
+//     setName("");
+//     setDate("");
+//   }
+
+//   return (
+//     <>
+//       <div className="container text-center">
+//         <form className="row" onSubmit={addDataToList}>
+//           <div className="col-4">
+//             <input
+//               type="text"
+//               value={name}
+//               onChange={handleNameChange}
+//               placeholder="Enter your ToDo...."
+//             />
+//           </div>
+//           <div className="col-4">
+//             <input type="date" value={date} onChange={handleDateChange} />
+//           </div>
+//           <div className="col-3">
+//             <button className="btn btn-success">Add</button>
+//           </div>
+//         </form>
+//       </div>
+//     </>
+//   );
+// }
+//
+//
+//
+//
+//
+//
+//
+//      INPUT USING USEREF
 
 function Input({ handleOnClickAdd }) {
-  const [name, setName] = useState("");
-  const [date, setDate] = useState("");
-
-  function handleNameChange(event) {
-    let newName = event.target.value;
-    setName(newName);
-  }
-  function handleDateChange(event) {
-    let newDate = event.target.value;
-    setDate(newDate);
-  }
+  const todoNameRef = useRef();
+  const todoDateRef = useRef();
 
   function addDataToList(event) {
     event.preventDefault();
+    const name = todoNameRef.current.value;
+    const date = todoDateRef.current.value;
     handleOnClickAdd(name, date);
-    setName("");
-    setDate("");
+    todoNameRef.current.value = "";
+    todoDateRef.current.value = "";
   }
 
   return (
@@ -27,13 +73,12 @@ function Input({ handleOnClickAdd }) {
           <div className="col-4">
             <input
               type="text"
-              value={name}
-              onChange={handleNameChange}
               placeholder="Enter your ToDo...."
+              ref={todoNameRef}
             />
           </div>
           <div className="col-4">
-            <input type="date" value={date} onChange={handleDateChange} />
+            <input type="date" ref={todoDateRef} />
           </div>
           <div className="col-3">
             <button className="btn btn-success">Add</button>
@@ -43,5 +88,4 @@ function Input({ handleOnClickAdd }) {
     </>
   );
 }
-
 export default Input;

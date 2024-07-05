@@ -1,10 +1,12 @@
 import Counter from "./display";
 import Demo from "./ref";
+import Dishan from "./button";
 function App() {
   return (
     <>
       {/* <Counter></Counter> */}
-      <Demo></Demo>
+      {/* <Demo></Demo> */}
+      <Dishan></Dishan>
     </>
   );
 }

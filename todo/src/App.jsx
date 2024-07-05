@@ -7,10 +7,16 @@ import { useState } from "react";
 function App() {
   const [data, setData] = useState([]);
 
+  // function handleOnClickAdd(name, date) {
+  //   setData([...data, { name, date }]);
+  // }
+  //
+  //
+  //
+  //...........same as above but with state updater function
   function handleOnClickAdd(name, date) {
-    setData([...data, { name, date }]);
+    setData((previousValue) => [...previousValue, { name, date }]); // it uses another shorthand of {name ,date } directly adds
   }
-
   function handleOnClickDelete(index) {
     let result = data.filter((item, dataIndex) => {
       return dataIndex != index;
