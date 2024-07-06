@@ -1,4 +1,8 @@
-function Value({ data, handleOnClickDelete }) {
+import { useContext } from "react";
+import { MyContext } from "../store/contextObject";
+
+function Value() {
+  const { data, handleOnClickDelete } = useContext(MyContext);
   return (
     <>
       <div>

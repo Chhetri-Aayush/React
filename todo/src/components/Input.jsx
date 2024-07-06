@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
+import { MyContext } from "../store/contextObject";
 
 //      INPUT USING USESTATE
 // function Input({ handleOnClickAdd }) {
@@ -51,9 +52,14 @@ import { useRef, useState } from "react";
 //
 //
 //
+//
 //      INPUT USING USEREF
+//
+//
+//
 
-function Input({ handleOnClickAdd }) {
+function Input() {
+  const { handleOnClickAdd } = useContext(MyContext);
   const todoNameRef = useRef();
   const todoDateRef = useRef();
 
