@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./app.css";
+
 function App() {
   const [color, setColor] = useState("");
   const [typeOfColor, setTypeOfColor] = useState("");
@@ -30,28 +31,33 @@ function App() {
   return (
     <>
       <div className="outerDiv" style={{ backgroundColor: color }}>
-        <div
-          style={{
-            color: "white",
-            fontSize: "50px",
-            position: "relative",
-            top: "180px",
-            left: "300px",
-            width: "370px",
-          }}
-        >
-          <h2>{typeOfColor === "rgb" ? "RGB Color" : "HEX Color"}</h2>
-          <h1>{color}</h1>
+        <div style={{ position: "absolute", top: "30%", left: "40%" }}>
+          <h2 style={{ fontSize: "70px", color: "white" }}>
+            {typeOfColor === "rgb"
+              ? "RGB Color"
+              : typeOfColor === "hex"
+              ? "HEX Color"
+              : null}
+          </h2>
+          <h1
+            style={{
+              position: "absolute",
+              top: "180px",
+              fontSize: "70px",
+              color: "white",
+            }}
+          >
+            {color}
+          </h1>
         </div>
 
         <div className="buttonDiv">
           <button
             onClick={() => setTypeOfColor("hex")}
             style={{
-              margin: "10px",
-              fontSize: "25px",
-              padding: "7px",
-              borderRadius: "3px",
+              fontSize: "30px",
+              margin: "9px",
+              padding: "5px",
               cursor: "pointer",
             }}
           >
@@ -60,10 +66,9 @@ function App() {
           <button
             onClick={() => setTypeOfColor("rgb")}
             style={{
-              margin: "10px",
-              fontSize: "25px",
-              padding: "7px",
-              borderRadius: "3px",
+              fontSize: "30px",
+              margin: "9px",
+              padding: "5px",
               cursor: "pointer",
             }}
           >
@@ -76,10 +81,9 @@ function App() {
               else RandomRGBcolor();
             }}
             style={{
-              margin: "10px",
-              fontSize: "25px",
-              padding: "7px",
-              borderRadius: "3px",
+              fontSize: "30px",
+              margin: "9px",
+              padding: "5px",
               cursor: "pointer",
             }}
           >

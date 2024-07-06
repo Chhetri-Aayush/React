@@ -11,6 +11,8 @@
 .buttonDiv{
     display: flex;
     justify-content: center;
-    position: relative;
-    bottom : -592px;
+    position: absolute;
+    bottom : 0px;
+    left: 30%;
+    
 }
