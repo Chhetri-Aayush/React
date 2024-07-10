@@ -1,0 +1,19 @@
+/* Add any custom styles you need */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .appContainer {
+    display: flex;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .sidebarCustom {
+    background-color: #343a40;
+  }
+  
