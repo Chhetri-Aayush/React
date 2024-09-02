@@ -1,0 +1,12 @@
+.sidebarCustom{
+    height: 80vh;
+}
+
+.appContainer{
+    display: flex;
+}
+
+.content{
+    width: 100%;
+}
+
